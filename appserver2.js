@@ -14,7 +14,7 @@ const cors = require('cors')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors({
-  origin: '*'
+  origin: 'https://test01.sakerp.org/'
 }))
 
 require('dotenv').config()
@@ -34,7 +34,7 @@ const server = app.listen(port, () => {
 
 const io = socketIO(serverconst io = socketIO(server, {
   cors: {
-    origin: '*',
+    origin: 'https://test01.sakerp.org/',
   }
 }))
 io.on('connection',(socket)=>{
