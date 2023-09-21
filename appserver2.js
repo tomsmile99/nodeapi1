@@ -52,6 +52,6 @@ io.on('connection',(socket)=>{
   socket.on('order',(response) => {
 
     console.log(response)
-    io.socket.emit('shop',response)
+    io.sockets.emit('shop',response)
   })
 })
