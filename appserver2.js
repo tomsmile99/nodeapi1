@@ -32,7 +32,11 @@ const server = app.listen(port, () => {
   console.log(`Server running at port : ${port}/`);
 })
 
-const io = socketIO(server)
+const io = socketIO(serverconst io = socketIO(server, {
+  cors: {
+    origin: '*',
+  }
+}))
 io.on('connection',(socket)=>{
   console.log('client socket connection')
 })
