@@ -45,6 +45,13 @@ const io = socketIO(server, {
     origin: '*',
   }
 })
+
 io.on('connection',(socket)=>{
   console.log('client socket connection')
+
+  socket.on('order',(response) => {
+
+    console.log(response)
+    io.socket.emit('shop',response)
+  })
 })
