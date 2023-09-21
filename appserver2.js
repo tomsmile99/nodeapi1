@@ -40,11 +40,11 @@ const server = app.listen(port, () => {
   console.log(`Server running at port : ${port}/`);
 })
 
-const io = socketIO(serverconst io = socketIO(server, {
+const io = socketIO(server, {
   cors: {
     origin: 'https://test01.sakerp.org/',
   }
-}))
+})
 io.on('connection',(socket)=>{
   console.log('client socket connection')
 })
